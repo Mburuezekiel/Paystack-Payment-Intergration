@@ -31,8 +31,8 @@ Ensure you have the following installed:
 
 2. Navigate to the project directory:
    ```bash
-   cd user-auth-firebase.
-```
+   cd simple-paystack-integration
+   ```
 3. Install dependencies:
 
    ```bash
