@@ -14,8 +14,8 @@ const schema = z.object({
     email: z.string().email("Invalid email address"),
     amount: z
         .number()
-        .min(100, "Minimum amount is 100")
-        .max(1000000, "Maximum amount is 1000000")
+        .min(1, "Minimum amount is 1")
+        .max(300000, "Maximum amount is 300000")
 });
 type FormData = z.infer<typeof schema>;
 
@@ -40,9 +40,9 @@ export default function PayStackPayment() {
 
         const paystackConfig = {
             email,
-            amount: amount * 100,
+            amount: amount * 1,
             publicKey,
-            currency: 'NGN',
+            currency: 'KES',
             metadata: {
                custom_fields: [
                      {
@@ -93,7 +93,7 @@ export default function PayStackPayment() {
                         {errors.email && <p className='text-sm text-red-500'>{errors.email.message}</p>}
                         <Input
                             {...register('amount')}
-                            label='Amount (NGN)'
+                            label='Amount (KES)'
                             type='number'
                             variant='faded'
                             size='lg'
